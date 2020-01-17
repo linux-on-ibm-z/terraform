@@ -165,12 +165,10 @@ func (t *ProviderTransformer) Transform(g *Graph) error {
 			// stub it out with an init-only provider node, which will just
 			// start up the provider and fetch its schema.
 			if _, exists := needConfigured[key]; target == nil && !exists {
-				fqn := t.Config.ProviderForLocalConfigAddr(req.Addr.ProviderConfig)
 				stubAddr := p.ProviderConfig.Absolute(addrs.RootModuleInstance)
 				stub := &NodeEvalableProvider{
 					&NodeAbstractProvider{
 						Addr: stubAddr,
-						Fqn:  fqn,
 					},
 				}
 				m[stubAddr.String()] = stub
