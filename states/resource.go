@@ -31,6 +31,13 @@ type Resource struct {
 	// not available, such as if it has been removed from configuration
 	// altogether.
 	ProviderConfig addrs.AbsProviderConfig
+
+	// ProviderFqn is the fully qualified name of the provider that
+	// most recently managed this resource. This is used to connect a resource
+	// with a provider schema when the resource configuration block is
+	// not available, such as if it has been removed from configuration
+	// altogether.
+	ProviderFqn addrs.Provider
 }
 
 // Instance returns the state for the instance with the given key, or nil

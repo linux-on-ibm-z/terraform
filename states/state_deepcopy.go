@@ -91,6 +91,7 @@ func (rs *Resource) DeepCopy() *Resource {
 		EachMode:       rs.EachMode,
 		Instances:      instances,
 		ProviderConfig: rs.ProviderConfig, // technically mutable, but immutable by convention
+		ProviderFqn:    rs.ProviderFqn,
 	}
 }
 
