@@ -4,11 +4,8 @@ services:
 
 matrix:
   include:
-    - os: linux
-      arch: s390x
-      language: go
-      go:
-        - 1.12.13
+    - arch: s390x
+      go: 1.12.x
 
 # add TF_CONSUL_TEST=1 to run consul tests
 # they were causing timouts in travis
