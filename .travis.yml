@@ -2,10 +2,16 @@ sudo: required
 services:
   - docker
 
-os: linux
-arch: s390x
-go: 1.12.x
-env: CONSUL_VERSION=0.7.5 GOMAXPROCS=4 GO111MODULE=on GOPROXY=https://proxy.golang.org/
+matrix:
+  include:
+    - os: linux
+      go: 1.12.x
+      env: CONSUL_VERSION=0.7.5 GOMAXPROCS=4 GO111MODULE=on GOPROXY=https://proxy.golang.org/
+    - os: linux
+      arch: s390x
+      go: 1.12.x
+      env: CONSUL_VERSION=0.7.5 GOMAXPROCS=4 GO111MODULE=on GOPROXY=https://proxy.golang.org/
+
 # add TF_CONSUL_TEST=1 to run consul tests
 # they were causing timouts in travis
 # add TF_ETCDV3_TEST=1 to run etcdv3 tests
