@@ -16,7 +16,7 @@ jobs:
 # if added, TF_ETCDV3_ENDPOINTS must be set to a comma-separated list of (insecure) etcd endpoints against which to test
 env:
   - CONSUL_VERSION=0.7.5 GOMAXPROCS=4 GO111MODULE=on GOPROXY=https://proxy.golang.org/
-  
+
 services:
   - docker
 # Fetch consul for the backend and provider tests
@@ -60,6 +60,6 @@ matrix:
   allow_failures:
   - go: tip
   include:
-  - os: linux
-  - os: linux
-    arch: s390x
+    - os: linux
+    - os: linux
+      arch: s390x
