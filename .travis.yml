@@ -2,6 +2,14 @@ dist: trusty
 sudo: required
 services:
   - docker
+
+
+matrix:
+  include:
+    - os: linux
+    - os: linux
+      arch: s390x
+
 language: go
 go:
 - "1.12.13"
@@ -42,8 +50,7 @@ script:
 
 branches:
   only:
-  - master
-  - v0.11
+  - s390x-travis
 notifications:
   irc:
     channels:
