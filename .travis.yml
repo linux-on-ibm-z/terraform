@@ -6,9 +6,11 @@ services:
 matrix:
   include:
     - os: linux
+      language: go
       go: 1.12.13
     - os: linux
       arch: s390x
+      language: go
       go: 1.12.13
 
 # add TF_CONSUL_TEST=1 to run consul tests
