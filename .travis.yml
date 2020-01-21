@@ -4,10 +4,13 @@ services:
 
 matrix:
   include:
-    - arch: s390x
+    - os: linux
       go: 1.12.x
-      env:
-        - CONSUL_VERSION=0.7.5 GOMAXPROCS=4 GO111MODULE=on GOPROXY=https://proxy.golang.org/
+      env: CONSUL_VERSION=0.7.5 GOMAXPROCS=4 GO111MODULE=on GOPROXY=https://proxy.golang.org/
+    - os: linux
+      arch: s390x
+      go: 1.12.x
+      env: CONSUL_VERSION=0.7.5 GOMAXPROCS=4 GO111MODULE=on GOPROXY=https://proxy.golang.org/
 
 # add TF_CONSUL_TEST=1 to run consul tests
 # they were causing timouts in travis
