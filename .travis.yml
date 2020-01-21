@@ -1,6 +1,5 @@
 sudo: required
-services:
-  - docker
+language: go
 
 matrix:
   include:
@@ -17,7 +16,8 @@ matrix:
 # add TF_ETCDV3_TEST=1 to run etcdv3 tests
 # if added, TF_ETCDV3_ENDPOINTS must be set to a comma-separated list of (insecure) etcd endpoints against which to test
 
-
+services:
+  - docker
 # Fetch consul for the backend and provider tests
 before_install:
   - curl -sLo consul.zip https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip
