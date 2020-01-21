@@ -4,10 +4,6 @@ services:
 
 matrix:
   include:
-    - language: go
-      os: linux
-      go: 
-        - 1.12.13
     - os: linux
       arch: s390x
       language: go
